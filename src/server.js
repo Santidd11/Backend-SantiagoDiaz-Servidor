@@ -85,8 +85,8 @@ mongoose.connect(envConfig.S_MONGO_URL,{
     useNewUrlParser:true,
     useUnifiedTopology: true
 },(error)=>{
-    if(error){logger.error("Conexion fallida")};
-    logger.info("Base de datos conectada correctamente")
+    if(error){logger.error("Conexion fallida")}
+    else{logger.info("Base de datos conectada correctamente")}
 });
 
 //Cokkies
