@@ -27,7 +27,6 @@ import { logger } from './logger/winston.js';
 
 const processArgDefault = {alias:{p:"port", m:"modo"}, default:{port:8080, modo:"FORK"}}
 const argumentos = parseArgs(process.argv.slice(2), processArgDefault);
-const PORT = envConfig.PORT || 8080;
 const MODO = argumentos.modo || "FORK";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -52,7 +51,7 @@ if(MODO === "CLUSTER" && cluster.isPrimary){
 }else{
 
     //Servidor express
-    const server = app.listen(`0.0.0.0:${PORT}`, ()=>logger.info(`Servidor escuchando el puerto: ${PORT}, en proceso ${process.pid}`));
+    const server = app.listen(envConfig.PORT, ()=>logger.info(`Servidor escuchando el puerto: ${PORT}, en proceso ${process.pid}`));
 
     //Socket
     const io = new Server(server);
