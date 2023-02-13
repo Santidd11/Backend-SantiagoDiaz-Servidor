@@ -3,6 +3,7 @@ dotenv.config();
 
 export const envConfig={
     MODO: process.env.MODO || "dev",
+    PORT: process.env.PORT || 8080,
     IDIOMA: process.env.IDIOMA || "english",
     DB_FILE_SYSTEM: process.env.DB_FILE_SYSTEM,
     DB_MONGO: process.env.DB_MONGO,
