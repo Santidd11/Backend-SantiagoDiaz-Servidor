@@ -27,8 +27,8 @@ import { logger } from './logger/winston.js';
 
 const processArgDefault = {alias:{p:"port", m:"modo"}, default:{port:8080, modo:"FORK"}}
 const argumentos = parseArgs(process.argv.slice(2), processArgDefault);
-const PORT = argumentos.port;
-const MODO = argumentos.modo;
+const PORT = argumentos.port || 8080;
+const MODO = argumentos.modo || "FORK";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const mensajesDB = ContenedorDaoChat;
