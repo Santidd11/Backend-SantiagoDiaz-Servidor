@@ -5,7 +5,7 @@ export const options = {
         path: envConfig.DB_FILE_SYSTEM,
     },
     mongo:{
-        path: envConfig.DB_MONGO,
+        path: 'mongodb://127.0.0.1:27017/chat',
     },
     firebase:{
         key: {
@@ -23,6 +23,6 @@ export const options = {
         databaseUrl: envConfig.DB_F_URL
     },
     mongoAtlasSessions:{
-        url: envConfig.DB_MONGO_ATLAS_URL
+        url: "mongodb+srv://Santidd11:coder.backend@cluster0.kc4fhea.mongodb.net/sessionsDB?retryWrites=true&w=majority"
     }
 }

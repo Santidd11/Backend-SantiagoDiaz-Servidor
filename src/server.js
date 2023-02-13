@@ -81,7 +81,7 @@ app.set("view engine", "handlebars");
 
 //Mongo
 mongoose.set("strictQuery", false);
-mongoose.connect(envConfig.S_MONGO_URL,{
+mongoose.connect("mongodb+srv://Santidd11:coder.backend@cluster0.kc4fhea.mongodb.net/CoderDB?retryWrites=true&w=majority",{
     useNewUrlParser:true,
     useUnifiedTopology: true
 },(error)=>{
@@ -95,7 +95,7 @@ app.use(cookieParser());
 //Session
 app.use(session({
     store: MongoStore.create({
-        mongoUrl: envConfig.S_MONGO_URL,
+        mongoUrl: "mongodb+srv://Santidd11:coder.backend@cluster0.kc4fhea.mongodb.net/CoderDB?retryWrites=true&w=majority",
     }),
     secret: envConfig.S_SESSION_SECRET,
     cookie: { maxAge: 600000},
